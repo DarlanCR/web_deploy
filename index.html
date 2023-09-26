@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,7 +28,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>cloud_project</title>
   <link rel="manifest" href="manifest.json">
@@ -37,18 +38,19 @@
     const serviceWorkerVersion = "1008395778";
   </script>
   <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <script src="main.dart.js" defer></script>
 </head>
+
 <body>
   <script>
-    window.addEventListener('load', function(ev) {
+    window.addEventListener('load', function (ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
             appRunner.runApp();
           });
         }
@@ -56,43 +58,44 @@
     });
   </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-  jQuery('body').on('click', '#your_button_id', function() {
-    // Check if the input[type="file"] is already in the DOM
-    if (!jQuery('#your_input_id').length) {
-      // Create an input[type="file"] element
-      var input = jQuery('<input/>', {
-        type: 'file',
-        id: 'your_input_id',
-        accept: 'image/*'
-      });
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    jQuery('body').on('click', '#your_button_id', function () {
+      // Check if the input[type="file"] is already in the DOM
+      if (!jQuery('#your_input_id').length) {
+        // Create an input[type="file"] element
+        var input = jQuery('<input/>', {
+          type: 'file',
+          id: 'your_input_id',
+          accept: 'image/*'
+        });
 
-      // Append the input element to the body
-      input.appendTo('body');
+        // Append the input element to the body
+        input.appendTo('body');
 
-      // Trigger a click event on the input element
-      input.trigger('click');
+        // Trigger a click event on the input element
+        input.trigger('click');
 
-      // Listen for changes on the input element
-      input.on('change', function() {
-        var file = input[0].files[0];
+        // Listen for changes on the input element
+        input.on('change', function () {
+          var file = input[0].files[0];
 
-        // Handle the selected file here
-        // For example, you can use the FileReader API to display the image
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          var imageSrc = e.target.result;
-          // Do something with the imageSrc
-        };
-        reader.readAsDataURL(file);
-      });
-    } else {
-      // Trigger a click event on the existing input[type="file"]
-      jQuery('#your_input_id').trigger('click');
-    }
-  });
-</script>
+          // Handle the selected file here
+          // For example, you can use the FileReader API to display the image
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var imageSrc = e.target.result;
+            // Do something with the imageSrc
+          };
+          reader.readAsDataURL(file);
+        });
+      } else {
+        // Trigger a click event on the existing input[type="file"]
+        jQuery('#your_input_id').trigger('click');
+      }
+    });
+  </script>
 
 </body>
+
 </html>
